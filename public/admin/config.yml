@@ -30,3 +30,20 @@ logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 
 # Add site links in Decap CMS (optional)
 site_url: https://art-portfolio.stephanielumayno1.workers.dev
+
+# Where uploaded media files will be saved in your project repo
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# Define your content collections
+collections:
+  - name: "artworks"
+    label: "Artworks"
+    folder: "src/content/artworks"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Description", name: "body", widget: "markdown" }
