@@ -1,0 +1,22 @@
+local_backend: true
+backend:
+  name: github
+  repo: StephLumayno/art-portfolio
+  branch: main
+  # You will paste your Cloudflare OAuth worker URL here after Step 4:
+  base_url: https://your-oauth-worker.your-subdomain.workers.dev
+  auth_endpoint: /auth
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
